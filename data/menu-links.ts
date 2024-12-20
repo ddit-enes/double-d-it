@@ -54,8 +54,8 @@ export const menu_links = [
         permalink: "/about",
       },
       {
-        title: "Careers",
-        permalink: "/careers",
+        title: "Career",
+        permalink: "/career",
       },
       {
         title: "Contact",
