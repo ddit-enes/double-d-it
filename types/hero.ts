@@ -1,4 +1,4 @@
-export type HeroType = {
+export type Hero = {
   title: string;
   description: string;
   btnText: string;

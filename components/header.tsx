@@ -7,7 +7,7 @@ import { menu_links } from "@/data/menu-links";
 const Header = () => {
   return (
     <header>
-      <div className="container flex justify-between h-20 mx-auto px-6 md:px-10">
+      <div className="container flex justify-between h-20 mx-auto px-6">
         <div className="flex-1 flex items-center">
           <MainMenu items={menu_links} />
           <div className="relative">

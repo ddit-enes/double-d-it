@@ -28,7 +28,12 @@ const RootLayout = ({
       <body
         className={`${montserrat.variable} ${montserrat.className} flex flex-grow h-full antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="flex flex-col flex-1">
             <Header />
             <main>{children}</main>

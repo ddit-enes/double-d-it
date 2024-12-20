@@ -1,4 +1,4 @@
-export type MenuType = {
+export type Menu = {
   label: string;
   pages: {
     title: string;
