@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import ThemeProvider from "@/components/theme-provider";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const montserrat = Montserrat({
   weight: ["400", "700"],
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     "Welcome to Double D IT, your trusted partner in innovative technology solutions. Explore our services, projects, and career opportunities.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body
@@ -31,11 +31,13 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           <div className="flex flex-col flex-1">
             <Header />
-            <main className="flex-1 flex justify-center">{children}</main>
+            <main>{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

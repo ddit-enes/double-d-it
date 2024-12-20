@@ -219,7 +219,7 @@ const privacyPolicyContent = [
   },
 ];
 
-export default function PrivacyPolicy() {
+const PrivacyPolicy = () => {
   return (
     <div className="container mb-6">
       <div className="relative">
@@ -267,4 +267,6 @@ export default function PrivacyPolicy() {
       })}
     </div>
   );
-}
+};
+
+export default PrivacyPolicy;

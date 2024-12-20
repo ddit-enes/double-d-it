@@ -12,11 +12,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { getMainNavigationsPath } from "@/utils/path";
 import NavLink from "@/components/nav-link";
-import { menu_links } from "@/data/menu-links";
+import { MenuType } from "@/types/menu";
 
-const MainMenu = () => {
+const MainMenu = ({ items }: { items: MenuType[] }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [accordionValues, setAccordionValues] = useState(menu_links.map((item) => item.label));
+  const [accordionValues, setAccordionValues] = useState(items.map((item) => item.label));
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -38,7 +38,7 @@ const MainMenu = () => {
             defaultValue={accordionValues}
             onValueChange={setAccordionValues}
           >
-            {menu_links.map((item, index) => (
+            {items.map((item, index) => (
               <AccordionItem key={index} value={item.label}>
                 <AccordionTrigger>{item.label}</AccordionTrigger>
                 <AccordionContent>

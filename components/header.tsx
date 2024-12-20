@@ -2,13 +2,14 @@ import React from "react";
 import Logo from "@/components/logo";
 import ThemeSwitcher from "@/components/theme-switcher";
 import MainMenu from "@/components/main-menu";
+import { menu_links } from "@/data/menu-links";
 
-export function Header() {
+const Header = () => {
   return (
     <header>
       <div className="container flex justify-between h-20 mx-auto px-6 md:px-10">
         <div className="flex-1 flex items-center">
-          <MainMenu />
+          <MainMenu items={menu_links} />
           <div className="relative">
             <Logo />
           </div>
@@ -21,4 +22,6 @@ export function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
