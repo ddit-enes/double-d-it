@@ -1,0 +1,10 @@
+Dockerfile
+Makefile
+docker-compose.yml
+.prettierignore
+.prettierrc
+
+.idea/
+vscode/
+.next/
+node_modules/
