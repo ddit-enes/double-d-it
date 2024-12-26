@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme: theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
