@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FC, useState } from "react";
 import { ChevronRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -10,13 +10,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { getMainNavigationsPath } from "@/utils/path";
 import NavLink from "@/components/nav-link";
-import { menu_links } from "@/data/menu-links";
+import { type Menu as MenuType } from "@/types/menu";
 
-const MainMenu = () => {
+type Props = {
+  items: MenuType[];
+};
+const MainMenu: FC<Props> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [accordionValues, setAccordionValues] = useState(menu_links.map((item) => item.label));
+  const [accordionValues, setAccordionValues] = useState(items.map((item) => item.label));
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -38,15 +40,17 @@ const MainMenu = () => {
             defaultValue={accordionValues}
             onValueChange={setAccordionValues}
           >
-            {menu_links.map((item, index) => (
+            {items.map((item, index) => (
               <AccordionItem key={index} value={item.label}>
-                <AccordionTrigger>{item.label}</AccordionTrigger>
+                <AccordionTrigger className="font-bold !no-underline pr-2.5">
+                  {item.label}
+                </AccordionTrigger>
                 <AccordionContent>
                   {item.pages.map((page, index) => (
                     <NavLink
                       key={index}
                       className="flex items-center gap-2 py-1.5 pl-4 transition-all duration-100 group"
-                      href={getMainNavigationsPath(page.permalink)}
+                      href={page.permalink}
                       onClick={() => setIsOpen(false)}
                     >
                       <ChevronRight className="w-4 h-4 group-focus:translate-x-0.5 transition-all" />

@@ -1,5 +1,7 @@
-// components/menuLinks.ts
-export const menu_links = [
+// components/main-menu.ts
+import { type Menu } from "@/types/menu";
+
+export const menu_links: Menu[] = [
   {
     label: "Main",
     pages: [

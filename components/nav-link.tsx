@@ -17,7 +17,7 @@ const NavLink = ({ children, className, href, ...rest }: NavLink) => {
   return (
     <Link
       href={href}
-      className={cn(`flex items-center ${isActive && "text-primary text-lg font-bold"}`, className)}
+      className={cn(`flex items-center ${isActive && "text-primary font-bold"}`, className)}
       {...rest}
     >
       {children}

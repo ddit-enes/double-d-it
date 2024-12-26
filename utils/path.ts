@@ -1,1 +1,1 @@
-export const getMainNavigationsPath = (page: string) => page;
+export const getHomePath = () => "/";

@@ -219,9 +219,9 @@ const privacyPolicyContent = [
   },
 ];
 
-export default function PrivacyPolicy() {
+const PrivacyPolicy = () => {
   return (
-    <div className="container mb-6">
+    <div className="container mx-auto mb-6">
       <div className="relative">
         <Image
           src="/double-d-it-office.png"
@@ -230,9 +230,7 @@ export default function PrivacyPolicy() {
           width={2200}
           height={1000}
         />
-        <h2 className="absolute inset-0 flex items-center justify-center text-2xl">
-          Privacy policy
-        </h2>
+        <h2 className="absolute inset-0 flex items-center justify-center">Privacy policy</h2>
       </div>
 
       {privacyPolicyContent.map((item, index) => {
@@ -267,4 +265,6 @@ export default function PrivacyPolicy() {
       })}
     </div>
   );
-}
+};
+
+export default PrivacyPolicy;
