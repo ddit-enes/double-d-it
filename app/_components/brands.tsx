@@ -8,7 +8,13 @@ const Brand = ({ className, brand }: { className?: string; brand: Brand }) => {
   return (
     <div className={cn("flex items-center justify-center", className)}>
       <a href={href} target="_blank" rel="nofollow noreferrer" className="relative h-12 w-full">
-        <Image src={image} alt={name} fill className="object-cover" />
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 50vw, (max-width: 1200px) 18vw, 18vw"
+          className="object-cover"
+        />
       </a>
     </div>
   );
