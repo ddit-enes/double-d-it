@@ -1,4 +1,4 @@
-import { ServicesTitleSection, Service } from "@/types/feature";
+import { ServicesTitleSection, Service } from "@/types/service";
 
 export const servicesTitleSection: ServicesTitleSection = {
   title: "Our Services",

@@ -4,7 +4,7 @@ import { type FC, ReactNode } from "react";
 import Link from "next/link";
 import { AudioLines, CodeXml, FileText, HousePlus, MonitorCog, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { type Service, ServicesTitleSection } from "@/types/feature";
+import { type Service, ServicesTitleSection } from "@/types/service";
 import { getHomePath } from "@/utils/path";
 import { primaryColorHEX } from "@/constants/colors";
 
