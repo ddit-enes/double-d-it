@@ -34,9 +34,9 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col flex-1">
+          <div className="flex flex-col flex-grow">
             <Header />
-            <main>{children}</main>
+            <main className="flex-grow">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>
