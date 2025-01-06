@@ -1,8 +1,13 @@
+import { breadcrumbContactPage } from "@/data/breadcrumb";
+import Breadcrumb from "@/components/breadcrumb";
+import Divider from "@/components/divider";
+
 const Contact = () => {
   return (
-    <div>
-      <h1>Hello from Contact page</h1>
-    </div>
+    <>
+      <Breadcrumb item={breadcrumbContactPage} />
+      <Divider />
+    </>
   );
 };
 

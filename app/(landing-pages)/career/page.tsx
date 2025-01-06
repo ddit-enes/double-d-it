@@ -1,8 +1,13 @@
+import { breadcrumbCareerPage } from "@/data/breadcrumb";
+import Breadcrumb from "@/components/breadcrumb";
+import Divider from "@/components/divider";
+
 const Career = () => {
   return (
-    <div>
-      <h1>Hello from Career page</h1>
-    </div>
+    <>
+      <Breadcrumb item={breadcrumbCareerPage} />
+      <Divider />
+    </>
   );
 };
 
