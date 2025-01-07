@@ -1,8 +1,13 @@
+import { breadcrumbLegalNoticePage } from "@/data/breadcrumb";
+import Breadcrumb from "@/components/breadcrumb";
+import Divider from "@/components/divider";
+
 const LegalNotice = () => {
   return (
-    <div>
-      <h1>Hello from LegalNotice page</h1>
-    </div>
+    <>
+      <Breadcrumb item={breadcrumbLegalNoticePage} />
+      <Divider />
+    </>
   );
 };
 

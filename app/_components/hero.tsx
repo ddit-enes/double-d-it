@@ -2,6 +2,11 @@ import Link from "next/link";
 import { type Hero } from "@/types/hero";
 import { primaryColorHEX } from "@/constants/colors";
 import { Button } from "@/components/ui/button";
+import { FC } from "react";
+
+type Props = {
+  item: Hero;
+};
 
 const SVGBackground = () => (
   <>
@@ -222,7 +227,7 @@ const SVGBackground = () => (
   </>
 );
 
-const Hero = ({ item }: { item: Hero }) => {
+const Hero: FC<Props> = ({ item }) => {
   const { title, description, btnText } = item;
 
   return (
