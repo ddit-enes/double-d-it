@@ -13,6 +13,19 @@ COPY . .
 COPY --from=deps /app/node_modules ./node_modules
 RUN npm run build
 
+# Create the development image from the base image
+FROM base AS dev
+WORKDIR /app
+
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+EXPOSE 3000
+ENV HOSTNAME=0.0.0.0
+
+CMD ["node", "server.js"]
+
 # Create the production image from the base image
 FROM base AS prod
 WORKDIR /app
