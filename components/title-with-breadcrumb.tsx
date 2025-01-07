@@ -14,6 +14,7 @@ import { usePathname } from "next/navigation";
 import { type Page } from "@/types/page";
 import { getHomePath } from "@/utils/path";
 import { primaryColorHEX } from "@/constants/colors";
+import { generateBreadcrumbLink } from "@/utils/bredcrumb-link-generator";
 
 type Props = {
   item: Page;
@@ -103,16 +104,10 @@ const TitleWithBreadcrumb: FC<Props> = ({ item }) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
 
-  const capitalize = (path: string, index: number) => {
-    const href = `/${pathNames.slice(0, index + 1).join("/")}`;
-    const itemLink = path[0].toUpperCase() + path.slice(1);
-    return { href, itemLink };
-  };
-
   return (
-    <section className="relative z-10 overflow-hidden py-10 sm:py-28 md:py-36">
-      <div className="container mx-auto">
-        <div className="mx-6 md:-mt-12 mb-12">
+    <section className="relative z-10 overflow-hidden pt-3 pb-6 md:py-12">
+      <div className="container mx-auto space-y-6 md:space-y-12">
+        <div className="mx-6">
           <Breadcrumb className="w-full md:w-4/12 lg:w-3/12">
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -124,7 +119,7 @@ const TitleWithBreadcrumb: FC<Props> = ({ item }) => {
                 <Slash />
               </BreadcrumbSeparator>
               {pathNames.map((path, index) => {
-                const { href, itemLink } = capitalize(path, index);
+                const { href, itemLink } = generateBreadcrumbLink(pathNames, path, index);
                 return (
                   <BreadcrumbItem key={index}>
                     <BreadcrumbLink asChild>
@@ -138,7 +133,7 @@ const TitleWithBreadcrumb: FC<Props> = ({ item }) => {
         </div>
         <div className="mx-6">
           <div className="w-full">
-            <div className="mx-auto max-w-[800px] md:text-center">
+            <div className="md:w-8/12">
               <h1>{title}</h1>
               <p className="!leading-relaxed sm:text-lg md:text-xl">{description}</p>
             </div>
