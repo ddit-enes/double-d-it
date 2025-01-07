@@ -14,7 +14,7 @@ const Header = () => {
             <Logo />
           </div>
         </div>
-        <div className="sm:flex-grow-1 flex items-center justify-end">
+        <div className="sm:flex-grow-1 flex items-center justify-end -mr-2.5">
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
           </div>
