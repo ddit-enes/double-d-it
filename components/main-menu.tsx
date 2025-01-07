@@ -11,10 +11,10 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import NavLink from "@/components/nav-link";
-import { type Menu as MenuType } from "@/types/menu";
+import { type MainMenu } from "@/types/menu";
 
 type Props = {
-  items: MenuType[];
+  items: MainMenu[];
 };
 const MainMenu: FC<Props> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);

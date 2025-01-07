@@ -5,6 +5,7 @@ import { Star } from "lucide-react";
 type Props = {
   data: Figure[];
 };
+
 const Figures: FC<Props> = ({ data }) => {
   return (
     <section className="pt-16 pb-10 md:pt-28 container mx-auto">
