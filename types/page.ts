@@ -14,8 +14,12 @@ export type Page = {
       siteName: string;
     };
   };
-  formFields?: Field[];
-  companyContact?: Contact;
+  form?: {
+    title: string;
+    description: string;
+    formFields?: Field[];
+    companyContact?: Contact;
+  };
 };
 
 export type Field = {
@@ -24,6 +28,7 @@ export type Field = {
   placeholder: string;
   label: string;
   required: boolean;
+  questions?: string[];
   minLength?: number;
   regex?: string;
 };

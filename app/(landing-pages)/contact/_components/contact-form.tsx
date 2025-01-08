@@ -1,12 +1,15 @@
 "use client";
 
 import { FC } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import DynamicForm from "@/components/dynamic-form";
 import { primaryColorHEX } from "@/constants/colors";
 import { Contact, Field } from "@/types/page";
 
 type Props = {
+  title?: string;
+  description?: string;
   companyContact?: Contact;
   formFields?: Field[];
 };
@@ -223,7 +226,7 @@ const CompanyContact: FC<Props> = ({ companyContact }) => {
         </div>
         {phone && (
           <Button className="px-12 py-6 shadow-none text-base w-full md:w-auto" asChild>
-            <a href={`tel:${phone}`}>Call now</a>
+            <Link href={`tel:${phone}`}>Call now</Link>
           </Button>
         )}
       </address>
@@ -233,12 +236,12 @@ const CompanyContact: FC<Props> = ({ companyContact }) => {
   );
 };
 
-const ContactForm: FC<Props> = ({ formFields, companyContact }) => {
+const ContactForm: FC<Props> = ({ title, description, formFields, companyContact }) => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pb-6">
       <div className="mx-6">
-        <h2 className="mb-4">Need Help? Fill our contact form!</h2>
-        <p className="mb-6 md:mb-10">Our support team will get back to you ASAP via email.</p>
+        <h2 className="mb-4">{title}</h2>
+        <p className="mb-6 md:mb-10">{description}</p>
 
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="basis-full lg:basis-8/12">

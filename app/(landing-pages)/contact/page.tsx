@@ -13,8 +13,10 @@ const Contact = () => {
       {/*<Divider />*/}
 
       <ContactForm
-        formFields={contactPage.formFields}
-        companyContact={contactPage.companyContact}
+        title={contactPage.form?.title}
+        description={contactPage.form?.description}
+        formFields={contactPage.form?.formFields}
+        companyContact={contactPage.form?.companyContact}
       />
       <Divider />
     </>
