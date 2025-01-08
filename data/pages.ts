@@ -60,6 +60,48 @@ export const contactPage: Page = {
       siteName: "double-D-IT",
     },
   },
+  formFields: [
+    {
+      inputType: "TEXT",
+      fieldName: "name",
+      placeholder: "John Doe",
+      label: "Name",
+      required: true,
+      minLength: 4,
+    },
+    {
+      inputType: "TEXT",
+      fieldName: "company",
+      placeholder: "Double D IT",
+      label: "Company",
+      required: false,
+    },
+    {
+      inputType: "EMAIL",
+      fieldName: "email",
+      placeholder: "info@example.com",
+      label: "Email",
+      required: true,
+    },
+    {
+      inputType: "TEXT",
+      fieldName: "phone",
+      placeholder: "490123456789",
+      label: "Phone number",
+      required: true,
+      minLength: 8,
+      regex: "^\\+?[1-9]\\d{8,14}$",
+    },
+  ],
+  companyContact: {
+    name: "double-D-IT",
+    address: "Bismarckstraße 18a",
+    place: "12169 Berlin-Steglitz",
+    country: "Germany",
+    phone: "+49 (0) 30-30328677-0",
+    fax: "+49 (0) 30-30328677-999",
+    email: "info(at)double-d-it.de",
+  },
 };
 
 export const legalNoticePage: Page = {
