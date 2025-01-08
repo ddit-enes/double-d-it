@@ -1,8 +1,8 @@
+import { FC } from "react";
 import Link from "next/link";
 import { type Hero } from "@/types/hero";
-import { primaryColorHEX } from "@/constants/colors";
 import { Button } from "@/components/ui/button";
-import { FC } from "react";
+import { primaryColorHEX } from "@/constants/colors";
 
 type Props = {
   item: Hero;
@@ -233,7 +233,7 @@ const Hero: FC<Props> = ({ item }) => {
   return (
     <section className="relative z-10 overflow-hidden py-10 sm:py-28 md:py-36">
       <div className="container mx-auto">
-        <div className="mx-6 flex flex-wrap">
+        <div className="mx-6">
           <div className="w-full">
             <div className="mx-auto max-w-[800px] md:text-center">
               <h1>{title}</h1>
