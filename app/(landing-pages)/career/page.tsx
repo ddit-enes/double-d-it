@@ -1,11 +1,14 @@
-import { breadcrumbCareerPage } from "@/data/breadcrumb";
-import Breadcrumb from "@/components/breadcrumb";
+import type { Metadata } from "next";
+import TitleWithBreadcrumb from "@/components/title-with-breadcrumb";
 import Divider from "@/components/divider";
+import { careerPage } from "@/data/pages";
+
+export const metadata: Metadata = careerPage.metadata;
 
 const Career = () => {
   return (
     <>
-      <Breadcrumb item={breadcrumbCareerPage} />
+      <TitleWithBreadcrumb item={careerPage} />
       <Divider />
     </>
   );
