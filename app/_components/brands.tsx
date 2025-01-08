@@ -27,7 +27,7 @@ const Brands = ({ title, brands }: { title: string; brands: Brand[] }) => {
         <h2 className="md:text-center md:mb-14">{title}</h2>
         <div className="grid grid-cols-6 gap-6 md:gap-10 items-center justify-center">
           {brands.map((brand, index) => (
-            <Brand key={index} className="col-span-3 sm:col-span-1" brand={brand} />
+            <Brand key={index} brand={brand} className="col-span-3 sm:col-span-1" />
           ))}
         </div>
       </div>
