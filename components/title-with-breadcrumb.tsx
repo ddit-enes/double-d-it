@@ -11,13 +11,15 @@ import {
 import Link from "next/link";
 import { Slash } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { type Page } from "@/types/page";
 import { getHomePath } from "@/utils/path";
 import { primaryColorHEX } from "@/constants/colors";
 import { generateBreadcrumbLink } from "@/utils/bredcrumb-link-generator";
 
 type Props = {
-  item: Page;
+  item: {
+    title: string;
+    description: string;
+  };
 };
 
 const SVGBackground = () => (
