@@ -40,6 +40,22 @@ export const careerPage: Page = {
       siteName: "double-D-IT",
     },
   },
+  careers: [
+    {
+      title: "Technische/r Assistent/in für Elektronik und Datentechnik",
+      slug: "technische-assistentin-fuer-elektronik-und-datentechnik",
+      description:
+        "Zur Verstärkung unseres Teams suchen wir ab sofort eine/n Technische/n Assistent/in für Elektronik und Datentechnik. ",
+      postedOn: "22.12.2024",
+    },
+    {
+      title: "2 x IT Systemadministrator (w/m/d)",
+      slug: "2-x-it-systemadministrator-w-m-d",
+      description:
+        "Sie sind auf der Suche nach neuen beruflichen Herausforderungen und Weiterentwicklungsmöglichkeiten? Sie arbeiten gerne im Team und sind voller Leidenschaft für Ihren Beruf?",
+      postedOn: "28.12.2024",
+    },
+  ],
 };
 
 export const contactPage: Page = {

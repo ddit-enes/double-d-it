@@ -1,3 +1,7 @@
+import { Career } from "@/types/career";
+import { Field } from "@/types/field";
+import { Contact } from "@/types/contact";
+
 export type Page = {
   title: string;
   description: string;
@@ -20,25 +24,5 @@ export type Page = {
     formFields?: Field[];
     companyContact?: Contact;
   };
-};
-
-export type Field = {
-  inputType: string;
-  fieldName: string;
-  placeholder: string;
-  label: string;
-  required: boolean;
-  questions?: string[];
-  minLength?: number;
-  regex?: string;
-};
-
-export type Contact = {
-  name: string;
-  address: string;
-  place: string;
-  country: string;
-  phone: string;
-  fax: string;
-  email: string;
+  careers?: Career[];
 };

@@ -5,7 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import DynamicForm from "@/components/dynamic-form";
 import { primaryColorHEX } from "@/constants/colors";
-import { Contact, Field } from "@/types/page";
+import { Contact } from "@/types/contact";
+import { Field } from "@/types/field";
 
 type Props = {
   title?: string;
