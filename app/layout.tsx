@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/theme-provider";
@@ -11,12 +10,6 @@ const montserrat = Montserrat({
   variable: "--font-open-sans",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Double D IT",
-  description:
-    "Welcome to Double D IT, your trusted partner in innovative technology solutions. Explore our services, projects, and career opportunities.",
-};
 
 const RootLayout = ({
   children,
