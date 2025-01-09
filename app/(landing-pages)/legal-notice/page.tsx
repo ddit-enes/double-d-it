@@ -1,11 +1,14 @@
-import { breadcrumbLegalNoticePage } from "@/data/breadcrumb";
-import Breadcrumb from "@/components/breadcrumb";
+import type { Metadata } from "next";
+import TitleWithBreadcrumb from "@/components/title-with-breadcrumb";
 import Divider from "@/components/divider";
+import { legalNoticePage } from "@/data/pages";
+
+export const metadata: Metadata = legalNoticePage.metadata;
 
 const LegalNotice = () => {
   return (
     <>
-      <Breadcrumb item={breadcrumbLegalNoticePage} />
+      <TitleWithBreadcrumb item={legalNoticePage} />
       <Divider />
     </>
   );
