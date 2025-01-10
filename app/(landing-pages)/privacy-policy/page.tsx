@@ -1,11 +1,14 @@
-import { breadcrumbPrivacyPolicyPage } from "@/data/breadcrumb";
-import Breadcrumb from "@/components/breadcrumb";
+import type { Metadata } from "next";
+import TitleWithBreadcrumb from "@/components/title-with-breadcrumb";
 import Divider from "@/components/divider";
+import { privacyPolicyPage } from "@/data/pages";
+
+export const metadata: Metadata = privacyPolicyPage.metadata;
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <Breadcrumb item={breadcrumbPrivacyPolicyPage} />
+      <TitleWithBreadcrumb item={privacyPolicyPage} />
       <Divider />
     </>
   );
