@@ -14,6 +14,7 @@ import { usePathname } from "next/navigation";
 import { getHomePath } from "@/utils/path";
 import { primaryColorHEX } from "@/constants/colors";
 import { generateBreadcrumbLink } from "@/utils/bredcrumb-link-generator";
+import React from "react";
 
 type Props = {
   item: {
@@ -110,35 +111,35 @@ const TitleWithBreadcrumb: FC<Props> = ({ item }) => {
     <section className="relative z-10 overflow-hidden pt-3 pb-6 md:py-12">
       <div className="container mx-auto space-y-6 md:space-y-12">
         <div className="mx-6">
-          <Breadcrumb className="w-full md:w-4/12 lg:w-3/12">
+          <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
                   <Link href={getHomePath()}>Home</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator>
-                <Slash />
-              </BreadcrumbSeparator>
               {pathNames.map((path, index) => {
                 const { href, itemLink } = generateBreadcrumbLink(pathNames, path, index);
                 return (
-                  <BreadcrumbItem key={index}>
-                    <BreadcrumbLink asChild>
-                      <Link href={href}>{itemLink}</Link>
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
+                  <React.Fragment key={index}>
+                    <BreadcrumbSeparator>
+                      <Slash />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink asChild>
+                        <Link href={href}>{itemLink}</Link>
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                  </React.Fragment>
                 );
               })}
             </BreadcrumbList>
           </Breadcrumb>
         </div>
         <div className="mx-6">
-          <div className="w-full">
-            <div className="md:w-8/12">
-              <h1>{title}</h1>
-              <p className="!leading-relaxed sm:text-lg md:text-xl">{description}</p>
-            </div>
+          <div className="md:w-8/12">
+            <h1>{title}</h1>
+            <p className="!leading-relaxed sm:text-lg md:text-xl">{description}</p>
           </div>
         </div>
       </div>
