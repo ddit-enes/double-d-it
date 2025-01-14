@@ -1,11 +1,26 @@
+"use client";
+
 import { FC } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import Link from "next/link";
-import { type Breadcrumb } from "@/types/breadcrumb";
+import { Slash } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { getHomePath } from "@/utils/path";
 import { primaryColorHEX } from "@/constants/colors";
+import { generateBreadcrumbLink } from "@/utils/bredcrumb-link-generator";
+import React from "react";
 
 type Props = {
-  item: Breadcrumb;
+  item: {
+    title: string;
+    description: string;
+  };
 };
 
 const SVGBackground = () => (
@@ -87,30 +102,44 @@ const SVGBackground = () => (
   </>
 );
 
-const Breadcrumb: FC<Props> = ({ item }) => {
-  return (
-    <section className="relative z-10 overflow-hidden py-10 sm:py-28 md:py-36">
-      <div className="container mx-auto">
-        <div className="mx-6 flex flex-wrap">
-          <div className="w-full md:w-8/12 lg:w-7/12">
-            <div className="mb-8 max-w-[570px] md:mb-0 lg:mb-12">
-              <h1>{item.pageName}</h1>
-              <p className="!leading-relaxed sm:text-lg md:text-xl">{item.description}</p>
-            </div>
-          </div>
+const TitleWithBreadcrumb: FC<Props> = ({ item }) => {
+  const { title, description } = item;
+  const paths = usePathname();
+  const pathNames = paths.split("/").filter((path) => path);
 
-          <div className="w-full md:w-4/12 lg:w-5/12">
-            <div className="text-end">
-              <ul className="flex items-center md:justify-end">
-                <li className="flex items-center">
-                  <Link href={getHomePath()} className="pr-1 hover:text-primary">
-                    Home
-                  </Link>
-                  <span className="mr-3 block h-2 w-2 rotate-45 border-r-2 border-t-2"></span>
-                </li>
-                <li className="text-primary">{item.pageName}</li>
-              </ul>
-            </div>
+  return (
+    <section className="relative z-10 overflow-hidden pt-3 pb-6 md:py-12">
+      <div className="container mx-auto space-y-6 md:space-y-12">
+        <div className="mx-6">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href={getHomePath()}>Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              {pathNames.map((path, index) => {
+                const { href, itemLink } = generateBreadcrumbLink(pathNames, path, index);
+                return (
+                  <React.Fragment key={index}>
+                    <BreadcrumbSeparator>
+                      <Slash />
+                    </BreadcrumbSeparator>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink asChild>
+                        <Link href={href}>{itemLink}</Link>
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                  </React.Fragment>
+                );
+              })}
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+        <div className="mx-6">
+          <div className="md:w-8/12">
+            <h1>{title}</h1>
+            <p className="!leading-relaxed sm:text-lg md:text-xl">{description}</p>
           </div>
         </div>
       </div>
@@ -120,4 +149,4 @@ const Breadcrumb: FC<Props> = ({ item }) => {
   );
 };
 
-export default Breadcrumb;
+export default TitleWithBreadcrumb;
