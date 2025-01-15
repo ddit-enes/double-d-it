@@ -27,8 +27,6 @@ const Home = () => {
 
       <Brands title="Partners" brands={brands} />
       <Divider />
-
-      {/*<Brands title="Premium Partners" brands={premiumPartners} />*/}
     </>
   );
 };

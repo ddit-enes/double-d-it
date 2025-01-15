@@ -10,7 +10,6 @@ const Contact = () => {
   return (
     <>
       <TitleWithBreadcrumb item={contactPage} />
-      {/*<Divider />*/}
 
       <ContactForm
         title={contactPage.form?.title}

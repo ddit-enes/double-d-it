@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Field } from "@/types/page";
+import { Field } from "@/types/field";
 import {
   Select,
   SelectContent,
