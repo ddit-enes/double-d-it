@@ -1,15 +1,15 @@
-import { BlockFigure, type Figure } from "@/types/block-figure";
+import { BlockFigure, Figure } from "@/types/block-figure";
 import { Star } from "lucide-react";
 
 type FigureProps = {
   figures: Figure[] | null;
 };
 
-type FiguresProps = {
+type BlockFigureProps = {
   figure: BlockFigure;
 };
 
-const Figure = ({ figures }: FigureProps) => {
+const Figures = ({ figures }: FigureProps) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-20">
       {figures?.map((item, index) => (
@@ -32,13 +32,13 @@ const Figure = ({ figures }: FigureProps) => {
   );
 };
 
-const FiguresBlock = ({ figure }: FiguresProps) => {
+const FiguresBlock = ({ figure }: BlockFigureProps) => {
   const { title, figures } = figure;
 
   return (
     <section className="pt-16 pb-10 md:pt-28 px-6 container mx-auto">
       <h2 className="md:text-center md:mb-14">{title}</h2>
-      <Figure figures={figures} />
+      <Figures figures={figures} />
     </section>
   );
 };
