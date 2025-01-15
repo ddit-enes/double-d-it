@@ -16,7 +16,7 @@ export const metadata: Metadata = {};
 const Home = () => {
   return (
     <>
-      <Hero item={hero} />
+      <Hero hero={hero} />
       <Divider />
 
       <Figures data={figures} />

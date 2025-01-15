@@ -1,11 +1,10 @@
-import { FC } from "react";
 import Link from "next/link";
-import { type Hero } from "@/types/hero";
+import { BlockHero } from "@/types/block-hero";
 import { Button } from "@/components/ui/button";
 import { primaryColorHEX } from "@/constants/colors";
 
-type Props = {
-  item: Hero;
+type HeroProps = {
+  hero: BlockHero;
 };
 
 const SVGBackground = () => (
@@ -227,23 +226,19 @@ const SVGBackground = () => (
   </>
 );
 
-const Hero: FC<Props> = ({ item }) => {
-  const { title, description, btnText } = item;
+const Hero = ({ hero }: HeroProps) => {
+  const { title, description, button_text, button_link } = hero;
 
   return (
     <section className="relative z-10 overflow-hidden py-10 sm:py-28 md:py-36">
-      <div className="container mx-auto">
-        <div className="mx-6">
-          <div className="w-full">
-            <div className="mx-auto max-w-[800px] md:text-center">
-              <h1>{title}</h1>
-              <p className="mb-12 !leading-relaxed sm:text-lg md:text-xl">{description}</p>
-              <div className="flex flex-col md:items-center md:justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <Button className="px-12 py-6 shadow-none text-base" asChild>
-                  <Link href="https://www.double-d-it.de/en/it-systemhouse/">{btnText}</Link>
-                </Button>
-              </div>
-            </div>
+      <div className="container mx-auto px-6">
+        <div className="mx-auto max-w-[800px] md:text-center">
+          <h1>{title}</h1>
+          <p className="mb-12 !leading-relaxed sm:text-lg md:text-xl">{description}</p>
+          <div className="flex flex-col md:items-center md:justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            <Button className="px-12 py-6 shadow-none text-base" asChild>
+              <Link href={button_link}>{button_text}</Link>
+            </Button>
           </div>
         </div>
       </div>
