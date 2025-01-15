@@ -226,7 +226,7 @@ const SVGBackground = () => (
   </>
 );
 
-const Hero = ({ hero }: HeroProps) => {
+const HeroBlock = ({ hero }: HeroProps) => {
   const { title, description, button_text, button_link } = hero;
 
   return (
@@ -236,9 +236,11 @@ const Hero = ({ hero }: HeroProps) => {
           <h1>{title}</h1>
           <p className="mb-12 !leading-relaxed sm:text-lg md:text-xl">{description}</p>
           <div className="flex flex-col md:items-center md:justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button className="px-12 py-6 shadow-none text-base" asChild>
-              <Link href={button_link}>{button_text}</Link>
-            </Button>
+            {button_link && (
+              <Button className="px-10 sm:px-12 py-6 shadow-none text-base" asChild>
+                <Link href={button_link}>{button_text}</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
@@ -247,4 +249,4 @@ const Hero = ({ hero }: HeroProps) => {
   );
 };
 
-export default Hero;
+export default HeroBlock;

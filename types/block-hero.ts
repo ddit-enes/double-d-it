@@ -1,6 +1,6 @@
 export type BlockHero = {
-  title: string;
-  description: string;
-  button_text: string;
-  button_link: string;
+  title: string | null;
+  description: string | null;
+  button_text: string | null;
+  button_link: string | null;
 };
