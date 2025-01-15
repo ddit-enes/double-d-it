@@ -4,12 +4,12 @@ import Divider from "@/components/divider";
 import HeroBlock from "@/app/_components/hero-block";
 import FiguresBlock from "@/app/_components/figures-block";
 import ServicesBlock from "@/app/_components/services-block";
-import Brands from "@/app/_components/brands";
+import BrandsBlock from "@/app/_components/brands-block";
 
 import { hero } from "@/data/hero";
 import { figure } from "@/data/figures";
 import { service } from "@/data/services";
-import { brands } from "@/data/brands";
+import { brand } from "@/data/brands";
 
 export const metadata: Metadata = {};
 
@@ -25,7 +25,7 @@ const Home = () => {
       <ServicesBlock service={service} />
       <Divider />
 
-      <Brands title="Partners" brands={brands} />
+      <BrandsBlock brand={brand} />
       <Divider />
     </>
   );
